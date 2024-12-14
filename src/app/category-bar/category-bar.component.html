@@ -1,14 +1,15 @@
 <div class="component w-full flex flex-column" *ngIf="sum">
     <div class="flex">
-        <div *ngFor="let item of categories; trackBy: trackByCategory" class="flex justify-content-center"
-            [style.width.%]="(item.value / sum) * 100">
-            {{ item.value | number: '1.2-2' }} ({{ (item.value / sum) * 100 | number: '1.2-2' }}%)
+        <div *ngFor="let item of items" class="flex justify-content-center"
+            [style.width.%]="item.percentage">
+            <div *ngIf="item.percentage > 8" class="truncate-text">{{ item.value | number: '1.2-2' }} ({{ item.percentage | number: '1.1-1' }}%)</div>
         </div>
     </div>
-    <div class="percentage-bar flex align-items-center justify-items-center">
-        <div *ngFor="let item of categories; trackBy: trackByCategory" class="percentage-bar-item cursor-pointer"
+    <div class="percentage-bar flex justify-items-center">
+        <div *ngFor="let item of items" class="percentage-bar-item cursor-pointer"
             [style.background-color]="item.color"
-            [style.width.%]="(item.value / sum) * 100">
+            [style.width.%]="item.percentage"
+            title="{{ item.value | number: '1.2-2' }} ({{ item.percentage  | number: '1.1-1' }}%)">
         </div>
     </div>
 </div>

@@ -14,16 +14,26 @@ export class CategoryBarComponent implements AfterViewInit {
   @Input() categories: CategoryBarItem[] = [];
 
   sum?: number;
+  items: {id: string, name: string, value: number, color: string, percentage: number}[] = [];
 
   ngAfterViewInit() {
     this.createBarChart();
   }
 
   createBarChart() {
-    let xOffset = 0;
-
     const computeSum = (acc: number, category: CategoryBarItem) => acc + category.value;
     this.sum = this.categories.reduce(computeSum, 0);
+
+    this.items = this.categories.map(category => {
+      const percentage = (category.value / this.sum!) * 100;
+      return {
+        id: category.id,
+        name: category.name,
+        value: category.value,
+        color: category.color,
+        percentage: Math.round(percentage)
+      };
+    });
   }
 
   trackByCategory(index: number, category: CategoryBarItem) {

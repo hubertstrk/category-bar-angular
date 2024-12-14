@@ -33,7 +33,7 @@ export class AppComponent implements OnInit {
       {
         id: '3',
         name: 'Category 3',
-        value: 0.43,
+        value: 15.43,
         color: '#ff6600',
         unit: 'kg/ha'
       },
