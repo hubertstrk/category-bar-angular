@@ -1,2 +1,15 @@
-<div id="category-bar"></div>
+<div class="component w-full flex flex-column" *ngIf="sum">
+    <div class="flex">
+        <div *ngFor="let item of categories; trackBy: trackByCategory" class="flex justify-content-center"
+            [style.width.%]="(item.value / sum) * 100">
+            {{ item.value | number: '1.2-2' }} ({{ (item.value / sum) * 100 | number: '1.2-2' }}%)
+        </div>
+    </div>
+    <div class="percentage-bar flex align-items-center justify-items-center">
+        <div *ngFor="let item of categories; trackBy: trackByCategory" class="percentage-bar-item cursor-pointer"
+            [style.background-color]="item.color"
+            [style.width.%]="(item.value / sum) * 100">
+        </div>
+    </div>
+</div>
 

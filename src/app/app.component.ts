@@ -19,26 +19,37 @@ export class AppComponent implements OnInit {
       {
         id: '1',
         name: 'Category 1',
-        value: 20,
-        color: 'red'
+        value: 20.23,
+        color: '#ff33cc',
+        unit: 'kg/ha'
       },
       {
         id: '2',
         name: 'Category 2',
-        value: 50,
-        color: 'blue'
+        value: 50.85,
+        color: '#ffff00',
+        unit: 'kg/ha'
       },
       {
         id: '3',
         name: 'Category 3',
-        value: 4,
-        color: 'green'
+        value: 0.43,
+        color: '#ff6600',
+        unit: 'kg/ha'
       },
       {
         id: '4',
         name: 'Category 4',
-        value: 26,
-        color: 'orange'
+        value: 26.30,
+        color: '#00cc99',
+        unit: 'kg/ha'
+      },
+      {
+        id: '5',
+        name: 'Category 4',
+        value: 75.54,
+        color: '#ddd',
+        unit: 'kg/ha'
       },
     ]
   }

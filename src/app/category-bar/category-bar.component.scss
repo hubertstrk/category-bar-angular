@@ -1,0 +1,16 @@
+.component {
+
+    .percentage-bar {
+
+        height: 20px;
+
+        .percentage-bar-item {
+            height: 10px;
+        }
+
+        .percentage-bar-item:hover {
+            border: 1px solid grey;
+        }
+    }
+    
+}

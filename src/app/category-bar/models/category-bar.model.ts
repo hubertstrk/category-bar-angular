@@ -3,4 +3,5 @@ export interface CategoryBarItem {
     name: string;
     value: number;
     color: string;
+    unit: string;
 }
