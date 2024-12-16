@@ -5,7 +5,7 @@
             <div *ngIf="item.percentage > 8" class="truncate-text">{{ item.value | number: '1.2-2' }} ({{ item.percentage | number: '1.1-1' }}%)</div>
         </div>
     </div>
-    <div class="percentage-bar flex justify-items-center">
+    <div class="percentage-bar flex align-items-center">
         <div *ngFor="let item of items" class="percentage-bar-item cursor-pointer"
             [style.background-color]="item.color"
             [style.width.%]="item.percentage"
